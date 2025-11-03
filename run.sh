@@ -22,7 +22,9 @@ TIMESTAMP="# Timestamp: "$START
 CBMC='./cbmc'
 FILE="findProtocol.c"
 HOST=`echo -e $(hostname)`
-OUTFILE="protocol_"$HOST"_"$START_PRINT".out"
+OUTDIR="out"
+mkdir -p "$OUTDIR"
+OUTFILE="${OUTDIR}/protocol_${HOST}_${START_PRINT}.out"
 TRACE_OPTS='--compact-trace --trace-hex'
 TIMEOUT="5d"
 N=$1
